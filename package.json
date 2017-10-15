@@ -8,6 +8,7 @@
     "build": "tsc",
     "lint": "tslint src/**/*",
     "codegen": "thrift-typescript --rootDir . --sourceDir ./thrift --outDir ./src/codegen",
+    "postinstall": "npm run codegen",
     "start": "node ./dist/server.js",
     "test": "lab --coverage --coverage-path ./src/main --sourcemaps --transform node_modules/lab-transform-typescript ./src/test",
     "test:watch": "watch 'npm test' ./src",

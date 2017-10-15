@@ -1,10 +1,17 @@
-import * as Hapi from 'hapi'
+import { Server } from 'hapi'
 
 import { ThriftPlugin } from '@creditkarma/thrift-server-hapi'
 import { CatalogService, IItemArgs, Item } from './codegen/catalog'
 
-const port = 3000
-const server = new Hapi.Server({ debug: { request: [ 'error' ] } })
+const HOST = 'localhost'
+const PORT = 3000
+
+const server = new Server({ debug: { request: [ 'error' ] } })
+
+server.connection({
+    host: HOST,
+    port: PORT,
+})
 
 /**
  * Register the thrift plugin.
