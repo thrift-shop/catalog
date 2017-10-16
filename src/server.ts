@@ -4,7 +4,7 @@ import { ThriftPlugin } from '@creditkarma/thrift-server-hapi'
 import { CatalogService, IItemArgs, Item } from './codegen/catalog'
 
 const HOST = 'localhost'
-const PORT = 3000
+const PORT = 3010
 
 const server = new Server({ debug: { request: [ 'error' ] } })
 
