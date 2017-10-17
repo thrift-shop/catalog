@@ -1,4 +1,4 @@
-import { Server } from 'hapi'
+import { Request, Server } from 'hapi'
 
 import { ThriftPlugin } from '@creditkarma/thrift-server-hapi'
 import { CatalogService, IItemArgs, Item } from './codegen/catalog'
@@ -34,7 +34,7 @@ server.register(ThriftPlugin, (err) => {
  * all HTTP request data from within your service implementation.
  */
 const impl = new CatalogService.Processor({
-    getAll: (context: Hapi.Request): Promise<Item[]> => {
+    getAll: (context: Request): Promise<Item[]> => {
         const item = new Item({
             itemId: '1001',
             version: 1,
@@ -72,5 +72,5 @@ server.start((err) => {
     if (err) {
         throw err
     }
-    server.log('info', `Server running on port ${port}`)
+    server.log('info', `Server running on port ${PORT}`)
 })
