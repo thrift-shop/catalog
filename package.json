@@ -8,7 +8,7 @@
     "build": "tsc",
     "lint": "tslint src/**/*",
     "idl:update": "idl update",
-    "idl:codegen": "thrift-typescript --rootDir . --sourceDir ./idl/github.com/thrift-shop/inventory --outDir ./src/codegen",
+    "idl:codegen": "thrift-typescript --rootDir . --sourceDir ./idl/github.com/thrift-shop --outDir ./src/codegen",
     "postinstall": "npm run idl:update && npm run idl:codegen",
     "start": "node ./dist/server.js",
     "test": "lab --coverage --coverage-path ./src/main --sourcemaps --transform node_modules/lab-transform-typescript ./src/test",
