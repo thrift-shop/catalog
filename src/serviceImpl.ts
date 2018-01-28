@@ -26,7 +26,7 @@ const data = [
  * all HTTP request data from within your service implementation.
  */
 export const catalogServiceImpl = new CatalogService.Processor({
-    getAll: (context: Request): Promise<Item[]> => {
+    getAll(context?: Request): Promise<Item[]> {
         const items = data.map((item) => new Item(item))
         return Promise.resolve(items)
     },
