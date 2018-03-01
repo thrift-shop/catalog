@@ -21,9 +21,7 @@ server.connection({
  * They behave like any other HTTP route handler, so you can mix and match
  * thrift / REST endpoints on the same server instance.
  */
-server.register(ThriftPlugin, (err) => {
-    if (err) { throw err }
-})
+server.register(ThriftPlugin)
 
 /**
  * Register server and request logger
@@ -44,8 +42,6 @@ server.register({
             }, 'stdout'],
         },
     },
-}, (err) => {
-    if (err) { throw err }
 })
 
 /**
