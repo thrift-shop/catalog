@@ -5,7 +5,7 @@ import { ThriftPlugin } from '@creditkarma/thrift-server-hapi'
 import { catalogServiceImpl as service } from './serviceImpl'
 
 const HOST = '0.0.0.0'
-const PORT = process.env.PORT || 3010;
+const PORT = parseInt(process.env.PORT || '3010', 10)
 
 const server = new Server({ debug: { request: [ 'error' ] } })
 

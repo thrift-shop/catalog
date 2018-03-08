@@ -27,7 +27,7 @@ describe('Thrift Server Hapi', () => {
         server = childProcess.fork('./dist/server.js')
         client = createClient(CatalogService.Client, {
             hostName: '0.0.0.0',
-            port: 3010,
+            port: parseInt(process.env.PORT || '3010', 10),
         })
         setTimeout(done, 1000)
     })
